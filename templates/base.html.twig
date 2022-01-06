@@ -18,14 +18,16 @@
       <a class="navbar-brand" href="#">Symfony</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       <ul class="nav navbar-nav navbar-right">
+        {% if is_granted('ROLE_ADMIN') %}
+        <li><a class="nav-link" href="{{ path('list_user') }}">Admin panel</a></li>
+        {% endif %}
         {% if app.user %}
         <li><a class="nav-link" href="{{ path('list') }}">View List</a></li>
         <li><a class="nav-link" href="{{ path('app_logout') }}">Logout</a></li>
         {% else %}
         <li><a class="nav-link" href="{{ path('app_login') }}">Login</a></li>
-        <li>
-          <a class="nav-link" href="{{ path('registration') }}">Register</a>
-        </li>
+        <li><a class="nav-link" href="{{ path('registration') }}">Register</a></li>
+        <li><a class="nav-link" href="{{ path('list') }}">Guest</a></li>
         {% endif %}
       </ul>
     </nav>

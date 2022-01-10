@@ -13,6 +13,7 @@ class CollectionCreateController extends AbstractController
     #[Route('/collection', name: 'collection_create')]
     public function index(Request $request)
     {
+
         $collection = new Collections();
 
         $form = $this->createForm(CollectionsType::class, $collection);

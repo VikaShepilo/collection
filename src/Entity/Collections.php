@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CollectionsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,16 @@ class Collections
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $img;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="collection", orphanRemoval=true)
+     */
+    private $items;
+
+    public function __construct()
+    {
+        $this->items = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -109,6 +121,37 @@ class Collections
 
     public function __toString()
     {
+        
         return $this->name;
+    }
+
+    /**
+     * @return Collection|Item[]
+     */
+    public function getItems(): Collection
+    {
+        return $this->items;
+    }
+
+    public function addItem(Item $item): self
+    {
+        if (!$this->items->contains($item)) {
+            $this->items[] = $item;
+            $item->setCollection($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItem(Item $item): self
+    {
+        if ($this->items->removeElement($item)) {
+            // set the owning side to null (unless already changed)
+            if ($item->getCollection() === $this) {
+                $item->setCollection(null);
+            }
+        }
+
+        return $this;
     }
 }

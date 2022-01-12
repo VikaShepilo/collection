@@ -36,6 +36,11 @@ class User implements UserInterface
      */
     private $name;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $locked;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -118,6 +123,18 @@ class User implements UserInterface
     public function setName(string $name): self
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function getLocked(): ?bool
+    {
+        return $this->locked;
+    }
+
+    public function setLocked(bool $locked): self
+    {
+        $this->locked = $locked;
+
         return $this;
     }
 }

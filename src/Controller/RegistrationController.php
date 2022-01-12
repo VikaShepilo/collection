@@ -34,6 +34,7 @@ class RegistrationController extends AbstractController
 
             // Set their role
             $user->setRoles(['ROLE_USER']);
+            $user->setLocked(false);
 
             // Save
             $em = $this->getDoctrine()->getManager();

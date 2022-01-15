@@ -14,9 +14,8 @@ class CollectionsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-
+        
         $builder
-            ->add('id_author', IntegerType::class)
             ->add('name', TextType::class)
             ->add('description', TextType::class)
             ->add('topic', ChoiceType::class, array(

@@ -5,25 +5,27 @@ namespace App\Controller;
 use App\Entity\Collections;
 use App\Form\CollectionsType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
-class CollectionCreateController extends AbstractController
+class ChangeCollectionController extends AbstractController
 {
-    #[Route('/collection', name: 'collection_create')]
+    #[Route('/change/collection', name: 'change_collection')]
     public function index(Request $request)
     {
-        $user = $this->getUser();
-        $id = $user->getId();
+        $url = $_SERVER['REQUEST_URI'];
+        $urlArray = explode("=", $url);
+        $id = $urlArray[1];
 
-        $collection = new Collections();
+        $em = $this->getDoctrine()->getManager();
+        $collection = $em->getRepository(Collections::class)->find($id);
 
         $form = $this->createForm(CollectionsType::class, $collection);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $collection->setIdAuthor($id);
+            $collection->setId($id);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($collection);
@@ -32,7 +34,7 @@ class CollectionCreateController extends AbstractController
             return $this->redirectToRoute('list');
         }
 
-        return $this->render('collection_create/index.html.twig', [
+        return $this->render('change_collection/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }

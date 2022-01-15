@@ -59,6 +59,14 @@ class Collections
         return $this->id;
     }
 
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+
     public function getIdAuthor(): ?int
     {
         return $this->id_author;

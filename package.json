@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@symfony/webpack-encore": "^1.7.0",
+    "core-js": "^3.20.3"
+  },
+  "devDependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/stimulus-bridge": "^3.0.0",
+    "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/Resources/assets",
+    "webpack-notifier": "^1.6.0"
+  }
+}

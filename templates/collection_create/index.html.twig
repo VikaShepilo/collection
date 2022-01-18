@@ -23,9 +23,9 @@ block body %}
             </div>
           </div>
           <div class="form_group">
-            <div class="col-md-12 mb-3">
-              {{ form_row(form.img, {'attr': {'class':'form-control'}}) }}
-            </div>
+            <form>
+              {{ form_row(form.img) }}
+            </form>
           </div>
           <div class="form-group">
             <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
@@ -40,4 +40,6 @@ block body %}
     </div>
   </div>
 </div>
+{% endblock %}
+{% block javascripts %}
 {% endblock %}

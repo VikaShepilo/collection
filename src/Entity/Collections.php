@@ -120,6 +120,16 @@ class Collections
      */
     private $abultContent;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Item::class, mappedBy="collections", orphanRemoval=true)
+     */
+    private $item;
+
+    public function __construct()
+    {
+        $this->item = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -375,6 +385,37 @@ class Collections
     public function setAbultContent(?bool $abultContent): self
     {
         $this->abultContent = $abultContent;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Item[]
+     */
+    public function getItem(): Collection
+    {
+        return $this->item;
+    }
+
+    public function addItem(Item $item): self
+    {
+
+        if (!$this->item->contains($item)) {
+            $this->item[] = $item;
+            $item->setCollections($this);
+        }
+
+        return $this;
+    }
+
+    public function removeItem(Item $item): self
+    {
+        if ($this->item->removeElement($item)) {
+            // set the owning side to null (unless already changed)
+            if ($item->getCollections() === $this) {
+                $item->setCollections(null);
+            }
+        }
 
         return $this;
     }

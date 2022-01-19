@@ -3,18 +3,39 @@
 {% block title %}Hello YourListItemsController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/work/nginx/html/collection/src/Controller/YourListItemsController.php'|file_link(0) }}">src/Controller/YourListItemsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/work/nginx/html/collection/templates/your_list_items/index.html.twig'|file_link(0) }}">templates/your_list_items/index.html.twig</a></code></li>
-    </ul>
+<a href="{{ path('create_item', {'id':id}) }}" class="btn btn-info">Create new item</a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-light mb-3 mt-3">
+        <div class="card-body">
+          <div class="card-header">Your items </div>
+          {% if app.user != null %}
+            {% if app.user.locked != 0 %}
+              <p>Your account is blocked!!! </p>
+            {% else %}
+            <table class="table">
+              <tr>
+                <th>Item name</th>
+              </tr>
+              {% for item in item %}
+              <tr>
+                <td>
+                  {{item.name}}
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      {% if app.user == null %}
+      <a href="{{ path('app_login') }}" class="btn btn-info">
+        You need to login to see the list >>
+        </a>
+      {% endif %}
+    </div>
+  </div>
 </div>
 {% endblock %}

@@ -21,7 +21,7 @@ body %}
               {% for collection in collection %}
               <tr>
                 <td>
-                  <a href="{{ path('your_list_items') }}" type="text"> {{ collection.name }} </a>
+                  <a href="{{ path('your_list_items', {'id':collection.id}) }}" type="text"> {{ collection.name }} </a>
                 </td>
                 <td>{{ collection.description | markdown_to_html }}</td>
                 <td>

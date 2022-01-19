@@ -23,11 +23,10 @@ class Item
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Collections::class, inversedBy="items")
+     * @ORM\ManyToOne(targetEntity=Collections::class)
      * @ORM\JoinColumn(nullable=false)
      */
-    private $collection;
-
+    private $id_collection;
 
     public function getId(): ?int
     {
@@ -46,17 +45,15 @@ class Item
         return $this;
     }
 
-    public function getCollection(): ?Collections
+    public function getIdCollection(): ?Collections
     {
-        return $this->collection;
+        return $this->id_collection;
     }
 
-    public function setCollection(?Collections $collection): self
+    public function setIdCollection(?Collections $id_collection): self
     {
-        $this->collection = $collection;
+        $this->id_collection = $id_collection;
 
         return $this;
     }
-
-
 }

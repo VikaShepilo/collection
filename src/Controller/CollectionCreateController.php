@@ -29,9 +29,12 @@ class CollectionCreateController extends AbstractController
             $em->persist($collection);
             $em->flush();
 
-            return $this->redirectToRoute('list');
-        }
+            $lastQuestion = $em->getRepository(Collections::class)->findOneBy([], ['id' => 'desc']);
+            $lastId = $lastQuestion->getId();
 
+            return $this->redirectToRoute('create_information', array('id' => $lastId));
+        }
+        
         return $this->render('collection_create/index.html.twig', [
             'form' => $form->createView(),
         ]);

@@ -31,7 +31,7 @@ class ChangeCollectionController extends AbstractController
             $em->persist($collection);
             $em->flush();
 
-            return $this->redirectToRoute('list');
+            return $this->redirectToRoute('your_list');
         }
 
         return $this->render('change_collection/index.html.twig', [

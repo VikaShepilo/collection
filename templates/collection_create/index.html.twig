@@ -27,68 +27,6 @@ block body %}
               {{ form_row(form.img) }}
             </div>
           </div>
-          <a onclick="toggle_visibility('additionInfo');" type="button" href="#">Extra options</a>
-          <div id="additionInfo" style="display:none">
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.author, {'attr': {'class': 'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.country, {'attr': {'class': 'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.genre, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.fees, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.placeInTheTop, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.numberOfAwards, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.commentTop, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.review, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.criticism, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group">
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.publicationDate, {'attr': {'class':'form-control'}}) }}
-                {{ form_row(form.authorIsDateOfBirth, {'attr': {'class':'form-control'}}) }}
-                {{ form_row(form.developmentDate, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-            <div class="form_group" >
-              <div class="col-md-12 mb-3">
-                {{ form_row(form.integrityOfHistory, {'attr': {'class':'form-control'}}) }}
-                {{ form_row(form.oneAuthor, {'attr': {'class':'form-control'}}) }}
-                {{ form_row(form.abultContent, {'attr': {'class':'form-control'}}) }}
-              </div>
-            </div>
-          </div>
           <div class="form-group">
             <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
               <button type="submit" class="btn btn-primary">

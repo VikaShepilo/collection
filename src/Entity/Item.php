@@ -24,7 +24,7 @@ class Item
 
     /**
      * @ORM\ManyToOne(targetEntity=Collections::class, inversedBy="item")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(name="collections_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $collections;
 

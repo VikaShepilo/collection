@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Collections;
+use App\Entity\Item;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,10 +14,10 @@ class ListController extends AbstractController
     {   
         $user = $this->getUser();
 
-        $collection = $this->getDoctrine()->getRepository(Collections::class)->findAll();
+        $items = $this->getDoctrine()->getRepository(Item::class)->findAll();
 
         return $this->render('list/index.html.twig', [
-            'collection' => $collection,
+            'items' => $items,
         ]);
     }
 }

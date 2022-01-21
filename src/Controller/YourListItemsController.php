@@ -18,6 +18,8 @@ class YourListItemsController extends AbstractController
 
         $item = $this->getDoctrine()->getRepository(Item::class)->findBy(['collections' => $id]);
 
+        // $itemSort = $this->getDoctrine()->getRepository(Item::class)->findBy(['collections' => $id], ['name'=>'ASC']);    
+
         return $this->render('your_list_items/index.html.twig', [
             'item' => $item,
             'id' => $id,

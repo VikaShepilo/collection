@@ -14,17 +14,25 @@
             {% if app.user.locked != 0 %}
               <p>Your account is blocked!!! </p>
             {% else %}
-            <table class="table">
+            <table class="table" id="myListItem">
               <tr>
-                <th>Item name</th>
+                <th onclick="sortTable(0)">№ 
+                  <svg id="icon" style="transform:rotate(0deg)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                  </svg>
+                </th>
+                <th onclick="sortTable(1)">Item name
+                  <svg id="iconName" style="transform:rotate(0deg)" style="transform:rotate(0deg)" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"/>
+                  </svg>
+                </th>
                 <th>Change item</th>
                 <th>Delete item</th>
               </tr>
-              {% for item in item %}
+              {% for item in item|sort((a, b) => a.id <=> b.id ?: a.name <=> b.name) %}
               <tr>
-                <td>
-                  {{item.name}}
-                </td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name}}</td>
                 <td>
                   <a href="{{ path('change_item', {'id_collection': id, 'id': item.id}) }}" type="button" class="btn btn-outline-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
@@ -54,4 +62,8 @@
     </div>
   </div>
 </div>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('build/js/sortItem.js') }}"></script>
 {% endblock %}

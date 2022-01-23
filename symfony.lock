@@ -127,6 +127,9 @@
     "nikic/php-parser": {
         "version": "v4.13.2"
     },
+    "onlinq/form-collection-bundle": {
+        "version": "0.1.2"
+    },
     "phar-io/manifest": {
         "version": "2.0.3"
     },

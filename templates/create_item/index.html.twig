@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CreateItemController!{% endblock %}
+{% block title %}{% endblock %}
 
 {% block body %}
 <div class="container">
@@ -12,12 +12,17 @@
           {{ form_start(form) }}
           <div class="form_group">
             <div class="col-md-12 mb-3">
-              {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+              {{ form_row(form.nameItem, {'attr': {'class': 'form-control'}}) }}
+            </div>
+          </div>
+          <div class="form_group">
+            <div class="col-md-12 mb-3">
+              {{ form_row(form.tags, {'attr': {'data-role': 'tagsinput'}}) }}</li>
             </div>
           </div>
           <div class="form-group">
             <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" class="add-another-collection-widget" data-list-selector="#email-fields-list">
                 <i class="fa fa-btn fa-user"></i> Create item
               </button>
             </div>
@@ -28,4 +33,8 @@
     </div>
   </div>
 </div>
+{% endblock %}
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('build/js/add-collection-widget.js') }}"></script>
 {% endblock %}

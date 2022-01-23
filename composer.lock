@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dbedc17ed00a590f67dafc826dd0430d",
+    "content-hash": "26acb43c4f22f1592f173054856af136",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -2359,6 +2359,51 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.13.2"
             },
             "time": "2021-11-30T19:35:32+00:00"
+        },
+        {
+            "name": "onlinq/form-collection-bundle",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onlinq/form-collection-bundle.git",
+                "reference": "c82d66adb2029e6c071d9e6702de8d7d4ff0581d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onlinq/form-collection-bundle/zipball/c82d66adb2029e6c071d9e6702de8d7d4ff0581d",
+                "reference": "c82d66adb2029e6c071d9e6702de8d7d4ff0581d",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/form": "^4.4|^5.0",
+                "symfony/framework-bundle": "^4.4|^5.0",
+                "symfony/twig-bundle": "^4.4|^5.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Onlinq\\FormCollectionBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Goudriaan",
+                    "email": "tim@onlinq.nl"
+                }
+            ],
+            "description": "Symfony bundle to build forms with Onlinq Form Collection web components",
+            "keywords": [
+                "symfony-ux"
+            ],
+            "support": {
+                "issues": "https://github.com/onlinq/form-collection-bundle/issues",
+                "source": "https://github.com/onlinq/form-collection-bundle/tree/0.1.2"
+            },
+            "time": "2021-09-15T21:17:22+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

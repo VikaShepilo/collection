@@ -5,6 +5,8 @@
   },
   "devDependencies": {
     "@hotwired/stimulus": "^3.0.0",
+    "@onlinq/form-collection": "^0.1.2",
+    "@onlinq/form-collection-bundle": "file:vendor/onlinq/form-collection-bundle/assets",
     "@symfony/stimulus-bridge": "^3.0.0",
     "@symfony/ux-dropzone": "file:vendor/symfony/ux-dropzone/Resources/assets",
     "webpack-notifier": "^1.6.0"

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ItemRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -20,7 +22,7 @@ class Item
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $nameItem;
 
     /**
      * @ORM\ManyToOne(targetEntity=Collections::class, inversedBy="item")
@@ -28,19 +30,29 @@ class Item
      */
     private $collections;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, inversedBy="items", cascade={"persist"})
+     */
+    private $tags;
+
+    public function __construct()
+    {
+        $this->tags = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getNameItem(): ?string
     {
-        return $this->name;
+        return $this->nameItem;
     }
 
-    public function setName(string $name): self
+    public function setNameItem(string $nameItem): self
     {
-        $this->name = $name;
+        $this->nameItem = $nameItem;
 
         return $this;
     }
@@ -53,6 +65,33 @@ class Item
     public function setCollections(?Collections $collections): self
     {
         $this->collections = $collections;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->addItem($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->removeElement($tag)) {
+            $tag->removeItem($this);
+        }
 
         return $this;
     }

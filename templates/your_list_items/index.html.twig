@@ -29,10 +29,10 @@
                 <th>Change item</th>
                 <th>Delete item</th>
               </tr>
-              {% for item in item|sort((a, b) => a.id <=> b.id ?: a.name <=> b.name) %}
+              {% for item in item %}
               <tr>
                 <td>{{ item.id }}</td>
-                <td>{{ item.name}}</td>
+                <td>{{ item.nameItem }}</td>
                 <td>
                   <a href="{{ path('change_item', {'id_collection': id, 'id': item.id}) }}" type="button" class="btn btn-outline-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">

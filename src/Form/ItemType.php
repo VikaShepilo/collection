@@ -4,20 +4,39 @@ namespace App\Form;
 
 use App\Entity\Item;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Form\DataTransformer\TagsToCollectionTransformer;
 
 class ItemType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    private $manager;
+ 
+    public function __construct(EntityManagerInterface $manager)
     {
-        $builder
-            ->add('name', TextType::class)
-        ;
+        $this->manager = $manager;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
+    {
+        $builder
+            ->add('nameItem')
+            ->add('tags', CollectionType::class, array(
+                'entry_type' => TagType::class,
+                'entry_options' => ['label' => false],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'required' => false,
+                'by_reference' => false,
+            ));
+        $builder
+            ->get('tags')
+            ->addModelTransformer(new TagsToCollectionTransformer($this->manager));
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'data_class' => Item::class,

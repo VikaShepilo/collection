@@ -22,7 +22,6 @@ class CreateItemController extends AbstractController
         $item = new Item();
 
         $tag = new Tag();
-        $tag->setName('');
         $item->getTags()->add($tag);
 
         $id = $this->getDoctrine()->getManager()->getRepository(Collections::class)->find($idCollection);

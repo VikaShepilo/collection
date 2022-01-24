@@ -10,8 +10,6 @@
         <div class="card-body">
           <div class="card-header mb-3">Create new collection</div>
           {{ form_start(form) }}
-          <a onclick="toggle_visibility('additionInfo');" type="button" href="#">Extra options string</a>
-          <div id="additionInfo" style="display:none">
             <div class="form_group">
               <div class="col-md-12 mb-3">
                 {{ form_row(form.author, {'attr': {'class': 'form-control'}}) }}
@@ -27,9 +25,6 @@
                 {{ form_row(form.genre, {'attr': {'class':'form-control'}}) }}
               </div>
             </div>
-          </div>
-          <a onclick="toggle_visibility('additionInfoInteger');" type="button" href="#">Extra options in top</a>
-          <div id="additionInfoInteger" style="display:none">
             <div class="form_group">
               <div class="col-md-12 mb-3">
                 {{ form_row(form.fees, {'attr': {'class':'form-control'}}) }}
@@ -45,7 +40,7 @@
                 {{ form_row(form.numberOfAwards, {'attr': {'class':'form-control'}}) }}
               </div>
             </div>
-          </div>
+
             <div class="form_group">
               <div class="col-md-12 mb-3">
                 {{ form_row(form.commentTop, {'attr': {'class':'form-control'}}) }}
@@ -90,6 +85,4 @@
 </div>
 {% endblock %}
 {% block javascripts %}
-  {{ parent() }}
-  <script src="{{ asset('build/js/equipment.js') }}"></script>
 {% endblock %}

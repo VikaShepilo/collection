@@ -51,7 +51,7 @@ class Tag
         return $this;
     }
 
-    /**
+     /**
      * @return Collection|Item[]
      */
     public function getItems(): Collection

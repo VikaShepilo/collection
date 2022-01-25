@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Item;
-use App\Entity\Tag;
 use App\Form\ItemType;
 use App\Entity\Collections;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,9 +19,6 @@ class CreateItemController extends AbstractController
         $idCollection = $urlArray[1];
 
         $item = new Item();
-
-        $tag = new Tag();
-        $item->getTags()->add($tag);
 
         $id = $this->getDoctrine()->getManager()->getRepository(Collections::class)->find($idCollection);
         $form = $this->createForm(ItemType::class, $item);

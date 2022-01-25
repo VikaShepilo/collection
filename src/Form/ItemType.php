@@ -22,14 +22,13 @@ class ItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nameItem')
+            ->add('nameItem');
+        $builder
             ->add('tags', CollectionType::class, array(
                 'entry_type' => TagType::class,
-                'entry_options' => ['label' => false],
                 'allow_add' => true,
-                'allow_delete' => true,
-                'required' => false,
                 'by_reference' => false,
+                'allow_delete' => true,
             ));
         $builder
             ->get('tags')

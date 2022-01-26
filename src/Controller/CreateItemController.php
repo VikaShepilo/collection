@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CreateItemController extends AbstractController
 {
-    #[Route('/createItem', name: 'create_item')]
+    #[Route('/{_locale<%app.supported_locales%>}/createItem', name: 'create_item')]
     public function index(Request $request)
     {   
         $url = $_SERVER['REQUEST_URI'];

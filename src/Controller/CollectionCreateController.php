@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CollectionCreateController extends AbstractController
 {
-    #[Route('/collection', name: 'collection_create')]
+    #[Route('/{_locale<%app.supported_locales%>}/collection', name: 'collection_create')]
     public function index(Request $request)
     {
         $user = $this->getUser();

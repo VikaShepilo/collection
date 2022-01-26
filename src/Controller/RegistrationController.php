@@ -18,7 +18,7 @@ class RegistrationController extends AbstractController
         $this->passwordEncoder = $passwordEncoder;
     }
     
-    #[Route('/registration', name: 'registration')]
+    #[Route('/{_locale<%app.supported_locales%>}/registration', name: 'registration')]
     
     public function index(Request $request)
     {

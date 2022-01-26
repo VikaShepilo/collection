@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="ru" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="Y4ND.sf" resname="Admin panel">
+        <source>Admin panel</source>
+        <target>Панель администратора</target>
+      </trans-unit>
+      <trans-unit id="7WFKupn" resname="Your collections">
+        <source>Your collections</source>
+        <target>Ваши коллекции</target>
+      </trans-unit>
+      <trans-unit id="URB2hnV" resname="All items">
+        <source>All items</source>
+        <target>Все айтемы</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Выйти</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Вход</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Регистрация</target>
+      </trans-unit>
+      <trans-unit id="XtiUSoW" resname="Guest">
+        <source>Guest</source>
+        <target>Гость</target>
+      </trans-unit>
+      <trans-unit id="acVpEs4" resname="You are logged in as">
+        <source>You are logged in as</source>
+        <target>Вы вошли в аккаунт</target>
+      </trans-unit>
+      <trans-unit id="dDUw20Q" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Пожалуйста, войдите</target>
+      </trans-unit>
+      <trans-unit id="P85QZGb" resname="E-Mail Address">
+        <source>E-Mail Address</source>
+        <target>E-Mail адрес</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Пароль</target>
+      </trans-unit>
+      <trans-unit id="KZFkyLC" resname="Сollection change">
+        <source>Сollection change</source>
+        <target>Изменить коллекцию</target>
+      </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Обновить</target>
+      </trans-unit>
+      <trans-unit id="yJ9MTAq" resname="Information change">
+        <source>Information change</source>
+        <target>Изменить информацию</target>
+      </trans-unit>
+      <trans-unit id="PwPUyO_" resname="Change name item">
+        <source>Change name item</source>
+        <target>Изменить имя айтема</target>
+      </trans-unit>
+      <trans-unit id="4dVxa3D" resname="Update item name">
+        <source>Update item name</source>
+        <target>Обновить имя айтема</target>
+      </trans-unit>
+      <trans-unit id="_Ybytl0" resname="Change tags">
+        <source>Change tags</source>
+        <target>Изменить теги</target>
+      </trans-unit>
+      <trans-unit id="_PdYcnF" resname="Update tags">
+        <source>Update tags</source>
+        <target>Обновить теги</target>
+      </trans-unit>
+      <trans-unit id="ZGTWybd" resname="Create new collection">
+        <source>Create new collection</source>
+        <target>Создать новую коллекцию</target>
+      </trans-unit>
+      <trans-unit id="R1lJisK" resname="Create">
+        <source>Create</source>
+        <target>Создать</target>
+      </trans-unit>
+      <trans-unit id="BdjoPo1" resname="Create new item">
+        <source>Create new item</source>
+        <target>Создать новый айтем</target>
+      </trans-unit>
+      <trans-unit id="CrelniH" resname="Create item">
+        <source>Create item</source>
+        <target>Создать айтем</target>
+      </trans-unit>
+      <trans-unit id="NV958p1" resname="Comments">
+        <source>Comments</source>
+        <target>Комментарии</target>
+      </trans-unit>
+      <trans-unit id="FV_BbAQ" resname="Submit">
+        <source>Submit</source>
+        <target>Отправить</target>
+      </trans-unit>
+      <trans-unit id="3.XPOzA" resname="No comments">
+        <source>No comments</source>
+        <target>Нет комментариев</target>
+      </trans-unit>
+      <trans-unit id="ZSvMOke" resname="Item">
+        <source>Item</source>
+        <target>Айтем</target>
+      </trans-unit>
+      <trans-unit id="qiHxeY4" resname="Collection:">
+        <source>Collection:</source>
+        <target>Коллекция:</target>
+      </trans-unit>
+      <trans-unit id="emYoaaa" resname="Registration Form">
+        <source>Registration Form</source>
+        <target>Форма регистрации</target>
+      </trans-unit>
+      <trans-unit id="V41wpMq" resname="Your account is blocked!!!">
+        <source>Your account is blocked!!!</source>
+        <target>Ваш аккаунт заблокирован!!!</target>
+      </trans-unit>
+      <trans-unit id="e_bI3.U" resname="Collection Name">
+        <source>Collection Name</source>
+        <target>Название коллекции</target>
+      </trans-unit>
+      <trans-unit id="OwTof5b" resname="Desctiption">
+        <source>Desctiption</source>
+        <target>Описание</target>
+      </trans-unit>
+      <trans-unit id="YmlfCrm" resname="Change collection">
+        <source>Change collection</source>
+        <target>Изменить коллекцию</target>
+      </trans-unit>
+      <trans-unit id="1ZpV1Cy" resname="Change information">
+        <source>Change information</source>
+        <target>Изменить информацию</target>
+      </trans-unit>
+      <trans-unit id="5zSsaaY" resname="Delete collection">
+        <source>Delete collection</source>
+        <target>Удалить коллекцию</target>
+      </trans-unit>
+      <trans-unit id="1R_DKGd" resname="You need to login to see the list &gt;&gt;">
+        <source>You need to login to see the list &gt;&gt;</source>
+        <target><![CDATA[ Зарегистрируйтесь >>]]></target>
+      </trans-unit>
+      <trans-unit id="T5C32.j" resname="Your items">
+        <source>Your items</source>
+        <target>Ваши айтемы</target>
+      </trans-unit>
+      <trans-unit id="cNX0MMo" resname="Item name">
+        <source>Item name</source>
+        <target>Имя айтема</target>
+      </trans-unit>
+      <trans-unit id="oSw4VEC" resname="Delete item">
+        <source>Delete item</source>
+        <target>Удалить айтем</target>
+      </trans-unit>
+      <trans-unit id="eRfhKhR" resname="Name collection">
+        <source>Name collection</source>
+        <target>Имя коллекции</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Описание</target>
+      </trans-unit>
+      <trans-unit id="fmGEfWH" resname="Topic">
+        <source>Topic</source>
+        <target>Тема</target>
+      </trans-unit>
+      <trans-unit id="GqTLC8y" resname="Image">
+        <source>Image</source>
+        <target>Изображение</target>
+      </trans-unit>
+      <trans-unit id="2VCCou5" resname="Author">
+        <source>Author</source>
+        <target>Автор</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Страна</target>
+      </trans-unit>
+      <trans-unit id="baeVqGZ" resname="Genre">
+        <source>Genre</source>
+        <target>Жанр</target>
+      </trans-unit>
+      <trans-unit id="bYBIbMM" resname="Fees">
+        <source>Fees</source>
+        <target>Денежные сборы</target>
+      </trans-unit>
+      <trans-unit id="RX8yiDZ" resname="Place in the top">
+        <source>Place in the top</source>
+        <target>Место в топе</target>
+      </trans-unit>
+      <trans-unit id="yPRlomE" resname="Number of awards">
+        <source>Number of awards</source>
+        <target>Номер топа</target>
+      </trans-unit>
+      <trans-unit id="v2s58Nk" resname="Comment top">
+        <source>Comment top</source>
+        <target>Лучший комментарий</target>
+      </trans-unit>
+      <trans-unit id="r.B2alK" resname="Review">
+        <source>Review</source>
+        <target>Ревью</target>
+      </trans-unit>
+      <trans-unit id="7Gr.wuz" resname="Criticism">
+        <source>Criticism</source>
+        <target>Критика</target>
+      </trans-unit>
+      <trans-unit id="KUc83Og" resname="Publication date">
+        <source>Publication date</source>
+        <target>День публикации</target>
+      </trans-unit>
+      <trans-unit id="6U0D7fp" resname="Author is date of birth">
+        <source>Author is date of birth</source>
+        <target>День рождение автора</target>
+      </trans-unit>
+      <trans-unit id="XJDZ60d" resname="Date development">
+        <source>Date development</source>
+        <target>Дата создания</target>
+      </trans-unit>
+      <trans-unit id="5q0W6PC" resname="Integrity of history">
+        <source>Integrity of history</source>
+        <target>Интегрированная история</target>
+      </trans-unit>
+      <trans-unit id="ZDzMfIj" resname="One author">
+        <source>One author</source>
+        <target>Один автор</target>
+      </trans-unit>
+      <trans-unit id="qZEWdY2" resname="Abult content">
+        <source>Abult content</source>
+        <target>Контент для взрослых</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Имя</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

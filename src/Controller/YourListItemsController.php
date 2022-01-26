@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class YourListItemsController extends AbstractController
 {
-    #[Route('/yourListItems', name: 'your_list_items')]
+    #[Route('/{_locale<%app.supported_locales%>}/yourListItems', name: 'your_list_items')]
     public function index(Request $request)
     {
         $url = $_SERVER['REQUEST_URI'];

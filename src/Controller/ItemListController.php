@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ItemListController extends AbstractController
 {
-    #[Route('/item/list', name: 'item_list')]
+    #[Route('/{_locale<%app.supported_locales%>}/item/list', name: 'item_list')]
     public function index(Request $request)
     {
         $user = $this->getUser();

@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}AppCollection{% endblock %}</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -21,22 +21,39 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       <ul class="nav navbar-nav navbar-right">
         {% if is_granted('ROLE_ADMIN') %}
-        <li><a class="nav-link" href="{{ path('list_user') }}">Admin panel</a></li>
+        <li><a class="nav-link" href="{{ path('list_user') }}">{{ 'Admin panel'|trans }}</a></li>
         {% endif %}
         {% if app.user %}
-        <li><a class="nav-link" href="{{ path('your_list') }}">Your collections</a></li>
-        <li><a class="nav-link" href="{{ path('list') }}">All items</a></li>
-        <li><a class="nav-link" href="{{ path('app_logout') }}">Logout</a></li>
+        <li><a class="nav-link" href="{{ path('your_list') }}">{{ 'Your collections'|trans }}</a></li>
+        <li><a class="nav-link" href="{{ path('list') }}">{{ 'All items'|trans }}</a></li>
+        <li><a class="nav-link" href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a></li>
         {% else %}
-        <li><a class="nav-link" href="{{ path('app_login') }}">Login</a></li>
-        <li><a class="nav-link" href="{{ path('registration') }}">Register</a></li>
-        <li><a class="nav-link" href="{{ path('list') }}">Guest</a></li>
+        <li><a class="nav-link" href="{{ path('app_login') }}">{{ 'Login'|trans }}</a></li>
+        <li><a class="nav-link" href="{{ path('registration') }}">{{ 'Register'|trans }}</a></li>
+        <li><a class="nav-link" href="{{ path('list') }}">{{ 'Guest'|trans }}</a></li>
         {% endif %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown-language" role="button" 
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ app.request.locale|locale_name(app.request.locale)|u.title }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown-language">
+            <li><a class="dropdown-item" href="{{ path('app_login', {_locale: 'en'}) }}">English</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_login', {_locale: 'ru'}) }}">Russian</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     {% block body %}{% endblock %} 
     {% block javascripts %}
-    
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
+    <script>
+      $('.dropdown-toggle').dropdown()
+    </script>
     {% endblock %}
   </body>
 </html>

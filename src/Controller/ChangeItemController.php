@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ChangeItemController extends AbstractController
 {
-    #[Route('/change/item', name: 'change_item')]
+    #[Route('/{_locale<%app.supported_locales%>}/change/item', name: 'change_item')]
     public function index(Request $request)
     {
         $url = $_SERVER['REQUEST_URI'];

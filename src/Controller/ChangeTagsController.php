@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ChangeTagsController extends AbstractController
 {
-    #[Route('/change/tags', name: 'change_tags')]
+    #[Route('/{_locale<%app.supported_locales%>}/change/tags', name: 'change_tags')]
     public function index(Request $request)
     {
         $url = $_SERVER['REQUEST_URI'];

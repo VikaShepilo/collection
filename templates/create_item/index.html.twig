@@ -8,7 +8,7 @@
     <div class="col-md-10 ml-md-auto">
       <div class="card bg-light mb-3 mt-5" style="width: 800px">
         <div class="card-body">
-          <div class="card-header mb-3">Create new item</div>
+          <div class="card-header mb-3">{{ 'Create new item'|trans }}</div>
           {{ form_start(form) }}
           <div class="form_group">
             <div class="col-md-12 mb-3">
@@ -25,7 +25,7 @@
           <div class="form-group">
             <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
               <button type="submit" class="btn btn-primary" class="add-another-collection-widget" data-list-selector="#email-fields-list">
-                <i class="fa fa-btn fa-user"></i> Create item
+                <i class="fa fa-btn fa-user"></i> {{ 'Create item'|trans }}
               </button>
             </div>
           </div>

@@ -25,6 +25,7 @@ class ItemType extends AbstractType
             ->add('nameItem');
         $builder
             ->add('tags', CollectionType::class, array(
+                'label' => false,
                 'entry_type' => TagType::class,
                 'allow_add' => true,
                 'by_reference' => false,

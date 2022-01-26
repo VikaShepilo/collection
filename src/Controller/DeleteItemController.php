@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DeleteItemController extends AbstractController
 {
-    #[Route('/delete/item', name: 'delete_item')]
+    #[Route('/{_locale<%app.supported_locales%>}/delete/item', name: 'delete_item')]
     public function index(): Response
     {
         $url = $_SERVER['REQUEST_URI'];

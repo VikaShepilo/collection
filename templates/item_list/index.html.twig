@@ -9,15 +9,20 @@
     <div class="col-md-12">
         <div class="panel panel-info">
             <div class="panel-heading">
-            Comments
+            {{ 'Comments'|trans }}
             </div>
             <div class="panel-body comments">
-                {{ form_start(form) }}
-                    {{ form_row(form.text, {'attr': {'class': 'form-control', 'rows':'5', 'placeholder': 'Add your comment'}}) }}
-                
-                <br>
-                <button type="submit" class="btn btn-info pull-right" id="form_submit" name="form[submit]">Submit</button>
-                {{ form_end(form) }}
+                {% if app.user != null %}
+                    {% if app.user.locked != 0 %}
+                    {% else %}
+                        {{ form_start(form) }}
+                            {{ form_row(form.text, {'attr': {'class': 'form-control', 'rows':'5' }}) }}
+                        
+                        <br>
+                        <button type="submit" class="btn btn-info pull-right" id="form_submit" name="form[submit]">{{ 'Submit'|trans }}</button>
+                        {{ form_end(form) }}
+                    {% endif %}
+                {% endif %}
                 <hr>
                 <ul class="media-list">
                     {% if comments|length > 0 %}
@@ -33,7 +38,7 @@
                             </li>
                         {% endfor %}
                     {% else %}
-                        <div>No comments have been posted yet for this conference.</div>
+                        <div>{{ 'No comments'|trans }}</div>
                     {% endif %}
                 </ul>
             </div>

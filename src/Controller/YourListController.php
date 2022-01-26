@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class YourListController extends AbstractController
 {
-    #[Route('/yourlist', name: 'your_list')]
+    #[Route('/{_locale<%app.supported_locales%>}/yourlist', name: 'your_list')]
     public function index(Request $request)
     {   
         $user = $this->getUser();

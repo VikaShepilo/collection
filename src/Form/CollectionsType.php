@@ -16,18 +16,23 @@ class CollectionsType extends AbstractType
     {
         
         $builder
-            ->add('name', TextType::class)
-            ->add('description', TextType::class)
-            ->add('topic', ChoiceType::class, array(
-                'choices' => array(
+            ->add('name', TextType::class, [
+                'label' => false,
+            ])
+            ->add('description', TextType::class, [
+                'label' => false,
+            ])
+            ->add('topic', ChoiceType::class, [
+                'label' => false,
+                'choices' => [
                     'Book' => 'Book',
                     'Film' => 'Film',
                     'Music' => 'Music',
-                ),
-                'expanded' => true))
+                ],
+                'expanded' => true])
             ->add('img', DropzoneType::class, [
                 'required' => false,
-                'label'    => 'Add picter',
+                'label' => false,
                 'attr' =>[
                     'class' => 'form-control']
                 ])

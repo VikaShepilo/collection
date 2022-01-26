@@ -18,63 +18,75 @@ class InformationType extends AbstractType
         
         $builder
             ->add('author', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('country', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('genre', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('fees', IntegerType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('placeInTheTop', IntegerType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('numberOfAwards', IntegerType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('commentTop', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('review', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('criticism', TextType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('publicationDate', DateType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('authorIsDateOfBirth', DateType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('developmentDate', DateType::class, [
+                'label' => false,
                 'required' => false,
                 ])
             ->add('integrityOfHistory', ChoiceType::class, array(
+                'label' => false,
                 'choices' => array(
-                    'Yes' => true,
-                    'No' => false
+                    '+' => true,
+                    '-' => false
                 ),
-                'label' => 'Integrity of history',
                 'required' => false,
                 ))
             ->add('oneAuthor', ChoiceType::class, array(
+                'label' => false,
                 'choices' => array(
-                    'Yes' => true,
-                    'No' => false
+                    '+' => true,
+                    '-' => false
                 ),
-                'label' => 'One author',
                 'required' => false,
                 ))
             ->add('abultContent', ChoiceType::class, array(
+                'label' => false,
                 'choices' => array(
-                    'Yes' => true,
-                    'No' => false
+                    '+' => true,
+                    '-' => false
                 ),
-                'label' => 'Abult content',
                 'required' => false,
                 ))
         ;

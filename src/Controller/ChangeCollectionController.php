@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ChangeCollectionController extends AbstractController
 {
-    #[Route('/change/collection', name: 'change_collection')]
+    #[Route('/{_locale<%app.supported_locales%>}/change/collection', name: 'change_collection')]
     public function index(Request $request)
     {
         $url = $_SERVER['REQUEST_URI'];

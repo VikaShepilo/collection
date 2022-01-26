@@ -1,23 +1,23 @@
 {# templates/list/index.html.twig #} {% extends 'base.html.twig' %} {% block
 body %}
-<a href="{{ path('collection_create') }}" class="btn btn-info">Create new collection</a>
+<a href="{{ path('collection_create') }}" class="btn btn-info">{{ 'Create new collection'|trans }}</a>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <div class="card bg-light mb-3 mt-3">
         <div class="card-body">
-          <div class="card-header">Your collections</div>
+          <div class="card-header">{{ 'Your collections'|trans }}</div>
           {% if app.user != null %}
             {% if app.user.locked != 0 %}
-              <p>Your account is blocked!!!</p>
+              <p>{{ 'Your account is blocked!!!'|trans }}</p>
             {% else %}
             <table class="table">
               <tr>
-                <th>Collection Name</th>
-                <th>Desctiption</th>
-                <th>Change collection</th>
-                <th>Change information</th>
-                <th>Delete collection</th>
+                <th>{{ 'Collection Name'|trans }}</th>
+                <th>{{ 'Desctiption'|trans }}</th>
+                <th>{{ 'Change collection'|trans }}</th>
+                <th>{{ 'Change information'|trans }}</th>
+                <th>{{ 'Delete collection'|trans }}</th>
               </tr>
               {% for collection in collection %}
               <tr>
@@ -55,7 +55,7 @@ body %}
       </div>
       {% if app.user == null %}
       <a href="{{ path('app_login') }}" class="btn btn-info">
-        You need to login to see the list >>
+        {{ 'You need to login to see the list >>'|trans }}
         </a>
       {% endif %}
     </div>

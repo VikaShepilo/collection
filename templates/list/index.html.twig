@@ -10,7 +10,7 @@ body %}
           <div class="col-sm-6">
             <div class="card">
               <div class="card-body">
-                <strong class="d-inline-block mb-2 text-primary">Item</strong>
+                <strong class="d-inline-block mb-2 text-primary">{{ 'Item'|trans }}</strong>
                 <h3 class="mb-0">
                   <a class="text-dark" href="{{ path('item_list', {'id':items.id}) }}">{{ items.nameItem }}</a>
                 </h3>
@@ -19,7 +19,7 @@ body %}
                     #{{ tag.name }} 
                   {% endfor %} 
                 </div>
-                <p class="card-text mb-auto">Collection: {{ items.collections }} </p>
+                <p class="card-text mb-auto">{{ 'Collection:'|trans }} {{ items.collections }} </p>
               </div>
             </div>
           </div>

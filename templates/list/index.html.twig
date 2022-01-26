@@ -3,32 +3,40 @@ body %}
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+
       <div class="card bg-light mb-3 mt-3">
-        <div class="tab-pane fade show active" >
-          <div class="card-header">Items</div>
-            <table class="table">
-              <tr>
-                <th>Item Name</th>
-              </tr>
-              {% for items in items %}
-              <tr>
-                <td>{{ items.nameItem }}</td>
-              </tr> 
-              {% endfor %} 
-            </table>
+        <div class="row">
+        {% for items in items %}
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <strong class="d-inline-block mb-2 text-primary">Item</strong>
+                <h3 class="mb-0">
+                  <a class="text-dark" href="{{ path('item_list', {'id':items.id}) }}">{{ items.nameItem }}</a>
+                </h3>
+                <div class="mb-1 text-muted">
+                  {% for tag in items.tags %}
+                    #{{ tag.name }} 
+                  {% endfor %} 
+                </div>
+                <p class="card-text mb-auto">Collection: {{ items.collections }} </p>
+              </div>
+            </div>
           </div>
-        </div> 
+        {% endfor %} 
+        <div class="col-sm-6">
+          {% for tag in tags %}
+            <a href="#">#{{ tag.name }} </a>
+          {% endfor %} 
+        </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 {% endblock %}
 {% block javascripts %}
   {{ parent() }}
-  <script>
-    $('#myTab a').on('click', function (e) {
-      e.preventDefault()
-      $(this).tab('show')
-    })
-  </script>
+
 {% endblock %}
 

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container">
+
+ <div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+            Comments
+            </div>
+            <div class="panel-body comments">
+                {{ form_start(form) }}
+                    {{ form_row(form.text, {'attr': {'class': 'form-control', 'rows':'5', 'placeholder': 'Add your comment'}}) }}
+                
+                <br>
+                <button type="submit" class="btn btn-info pull-right" id="form_submit" name="form[submit]">Submit</button>
+                {{ form_end(form) }}
+                <hr>
+                <ul class="media-list">
+                    {% if comments|length > 0 %}
+                        {% for comment in comments %}
+                            <li class="media">
+                                <div class="comment">
+                                    <div class="media-body">
+                                        <strong class="text-success">{{ comment.author }}</strong>
+                                            <span class="text-muted"><small class="text-muted">{{ comment.createdAt|date('Y-m-d H:i:s')}}</small></span>
+                                            <p>{{ comment.text }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <div>No comments have been posted yet for this conference.</div>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

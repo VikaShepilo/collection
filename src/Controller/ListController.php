@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Item;
+use App\Entity\Tag;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +16,16 @@ class ListController extends AbstractController
     {   
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
-        $items = $em->getRepository(Item::class)->findAll();
+        $items = $em->getRepository(Item::class)->findBy([], ['id' => 'DESC'], 6);
+
+        $tags = $em->getRepository(Tag::class)->findAll();
+
+        $collections = $em->getRepository(Item::class)->findBy([], []);
 
         return $this->render('list/index.html.twig', [
             'items' => $items,
+            'tags' => $tags,
+            'collections' => $collections,
         ]);
     }
 }

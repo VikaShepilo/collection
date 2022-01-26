@@ -40,6 +40,11 @@ class Item
      */
     private $comments;
 
+    public function __toString(){
+        // to show the name of the Category in the select
+        return $this->nameItem;
+    }
+
     public function __construct()
     {
         $this->tags = new ArrayCollection();

@@ -17,7 +17,6 @@ class CollectionCreateController extends AbstractController
         $id = $user->getId();
 
         $collection = new Collections();
-        
 
         $form = $this->createForm(CollectionsType::class, $collection);
         $form->handleRequest($request);

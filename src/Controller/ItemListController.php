@@ -31,7 +31,7 @@ class ItemListController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $comment->setAuthor('vika');
+            $comment->setAuthor($user->getName());
             $comment->setCreatedAt(new \DateTime());
             $comment->setItem($id);
 

@@ -16,4 +16,5 @@ return [
     Symfony\UX\Dropzone\DropzoneBundle::class => ['all' => true],
     Symfony\WebpackEncoreBundle\WebpackEncoreBundle::class => ['all' => true],
     Onlinq\FormCollectionBundle\OnlinqFormCollectionBundle::class => ['all' => true],
+    Vatri\GoogleDriveBundle\VatriGoogleDriveBundle::class => ['all' => true],
 ];

@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\UX\Dropzone\Form\DropzoneType;
 
 class CollectionsType extends AbstractType
@@ -30,11 +31,20 @@ class CollectionsType extends AbstractType
                     'Music' => 'Music',
                 ],
                 'expanded' => true])
-            ->add('img', DropzoneType::class, [
-                'required' => false,
-                'label' => false,
-                'attr' =>[
-                    'class' => 'form-control']
+                ->add('img', DropzoneType::class, [
+                    'label' => false,
+                    'mapped' => false,
+                    'required' => false,
+                    'constraints' => [
+                        new File([
+                            'maxSize' => '1024k',
+                            'mimeTypes' => [
+                                'image/jpeg',
+                                'image/png',
+                            ],
+                            'mimeTypesMessage' => 'Please upload a valid PNG or JPG document',
+                        ])
+                    ],
                 ])
         ;
     }

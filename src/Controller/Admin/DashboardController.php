@@ -9,10 +9,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\User;
+use App\Entity\Collections;
+use App\Entity\Item;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin_panel', name: 'list_user')]
+    #[Route('/admin_panel')]
+    public function indexNoLocale(): Response
+    {
+        return $this->redirectToRoute('list_user', ['_locale' => 'en']);
+    }
+
+    #[Route('/{_locale<%app.supported_locales%>}/admin_panel', name: 'list_user')]
 
     public function index(): Response
     {
@@ -28,6 +36,8 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'list');
-        yield MenuItem::linkToCrud('Users', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Users', 'fas fa-user', User::class);
+        yield MenuItem::linkToCrud('Collections', 'fas fa-list', Collections::class);
+        yield MenuItem::linkToCrud('Items', 'fas fa-list', Item::class);
     }
 }

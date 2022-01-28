@@ -10,7 +10,6 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     
-    
     {% block stylesheets %}
       <link rel="stylesheet" href="{{ asset('build/css/list.css') }}"/>
     {% endblock %}
@@ -26,14 +25,14 @@
       </div>
       <ul class="nav navbar-nav navbar-right ">
         {% if app.user %}
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="{{ path('blog_search') }}" method="get">
+            <input type="search" class="form-control" placeholder="{{ 'Search'|trans }}..." aria-label="Search" name="q">
         </form>
         {% if is_granted('ROLE_ADMIN') %}
         <li><a class="nav-link" href="{{ path('list_user') }}">{{ 'Admin panel'|trans }}</a></li>
         {% endif %}
         <li><a class="nav-link" href="{{ path('your_list') }}">{{ 'Your collections'|trans }}</a></li>
-        <li><a class="nav-link" href="{{ path('list') }}">{{ 'All items'|trans }}</a></li>
+        <li><a class="nav-link" href="{{ path('list') }}">{{ 'Home'|trans }}</a></li>
         <li><a class="nav-link" href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a></li>
         {% else %}
         <li><a class="nav-link" href="{{ path('app_login') }}">{{ 'Login'|trans }}</a></li>

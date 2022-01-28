@@ -19,6 +19,15 @@ class ItemRepository extends ServiceEntityRepository
         parent::__construct($registry, Item::class);
     }
 
+    public function searchByQuery(string $query)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.nameItem LIKE :query')
+            ->setParameter('query', '%'. $query. '%')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Item[] Returns an array of Item objects
     //  */

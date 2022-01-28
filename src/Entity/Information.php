@@ -34,7 +34,7 @@ class Information
 
     /**
      * @ORM\OneToOne(targetEntity=Collections::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $one_collection;
 

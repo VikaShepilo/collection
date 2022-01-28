@@ -31,4 +31,16 @@ class ListController extends AbstractController
             'collections' => $collections,
         ]);
     }
+
+    #[Route('/{_locale<%app.supported_locales%>}/search', name: 'blog_search')]
+    public function search(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $request->query->get('q');
+        $items = $em->getRepository(Item::class)->searchByQuery($query);
+
+        return $this->render('search/index.html.twig', [
+            'items' => $items
+        ]);
+    }
 }

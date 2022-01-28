@@ -16,11 +16,8 @@ class ItemListController extends AbstractController
     public function index(Request $request)
     {
         $user = $this->getUser();
-
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idItem = $urlArray[1];
-
+        $idItem = $request->query->get('id');
+        
         $em = $this->getDoctrine()->getManager();
         $comments = $em->getRepository(Comment::class)->findBy(['item' => $idItem], ['createdAt' => 'ASC']);
 

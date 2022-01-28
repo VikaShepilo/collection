@@ -15,10 +15,8 @@ class ChangeTagsController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/change/tags', name: 'change_tags')]
     public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idItemCollection = $urlArray[2];
-        $idItem = $urlArray[1];
+        $idItemCollection = $request->query->get('id');
+        $idItem = $request->query->get('id_collection');
 
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository(Item::class)->find($idItemCollection);

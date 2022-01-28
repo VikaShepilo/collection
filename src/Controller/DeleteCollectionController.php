@@ -4,17 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Collections;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DeleteCollectionController extends AbstractController
 {
     #[Route('/{_locale<%app.supported_locales%>}/deletecollection', name: 'delete_collection')]
-    public function index(): Response
+    public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $id = $urlArray[1];
+        $id = $request->query->get('id');
 
         $em = $this->getDoctrine()->getManager();
         $collectionDelete = $em->getRepository(Collections::class)->find($id);

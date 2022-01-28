@@ -14,9 +14,7 @@ class ChangeInformationController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/change/information', name: 'change_information')]
     public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idCollection = $urlArray[1];
+        $idCollection = $request->query->get('id');
 
         $em = $this->getDoctrine()->getManager();
         $information = $em->getRepository(Information::class)->findOneBy(['one_collection' => $idCollection], []);

@@ -12,10 +12,7 @@ class YourListItemsController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/yourListItems', name: 'your_list_items')]
     public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $id = $urlArray[1];
-
+        $id = $request->query->get('id');
         $item = $this->getDoctrine()->getRepository(Item::class)->findBy(['collections' => $id]);
 
         // $itemSort = $this->getDoctrine()->getRepository(Item::class)->findBy(['collections' => $id], ['name'=>'ASC']);    

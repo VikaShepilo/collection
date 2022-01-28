@@ -14,9 +14,7 @@ class CreateInformationController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/createInformation', name: 'create_information')]
     public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idCollection = $urlArray[1];
+        $idCollection = $request->query->get('id');
 
         $information = new Information();
         $id = $this->getDoctrine()->getManager()->getRepository(Collections::class)->find($idCollection);

@@ -6,17 +6,16 @@ use App\Entity\Item;
 use App\Entity\Collections;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class DeleteItemController extends AbstractController
 {
     #[Route('/{_locale<%app.supported_locales%>}/delete/item', name: 'delete_item')]
-    public function index(): Response
+    public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idItemCollection = $urlArray[2];
-        $idItem = $urlArray[1];
+        $idItem = $request->query->get('id_collection');
+        $idItemCollection = $request->query->get('id');
 
         $em = $this->getDoctrine()->getManager();
         $item = $em->getRepository(Item::class)->find($idItemCollection);

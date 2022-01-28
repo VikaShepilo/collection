@@ -4,15 +4,15 @@ body %}
   <div class="card bg-light mb-3 mt-3">
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
       <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic">Collections Application</h1>
-        <p class="lead my-3">This application has the ability to create collections with items that can have tags and other information.</p>
+        <h1 class="display-4 fst-italic">{{'Collections Application'|trans }}</h1>
+        <p class="lead my-3">{{'This application has the ability to create collections with items that can have tags and other information.'|trans }}</p>
       </div>
     </div>
 
     <div class="row g-5">
       <div class="col-md-8">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">
-          Items
+          {{'Items'|trans }}
         </h3>
         <div class="row" id="last_items">
           {% for items in last_items %}
@@ -81,21 +81,21 @@ body %}
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
           <div class="p-4 mb-3 bg-light rounded">
-            <h4 class="fst-italic">Filters</h4>
+            <h4 class="fst-italic">{{'Filters'|trans }}</h4>
             <p class="mb-0">
               <div>
-                <h6>Items</h6>
+                <h6>{{'Items'|trans }}</h6>
                 <form class="ml-md-2">
-                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="last" onclick="showThis(this)" checked> <label for="last" class="pl-1 pt-sm-0 pt-1">6 last added</label> </div>
-                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="first" onclick="showThis(this)"> <label for="first" class="pl-1 pt-sm-0 pt-1">6 first added</label> </div>
-                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="all" onclick="showThis(this)"> <label for="all" class="pl-1 pt-sm-0 pt-1">All items</label> </div>
+                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="last" onclick="showThis(this)" checked> <label for="last" class="pl-1 pt-sm-0 pt-1">{{'6 last added'|trans }}</label> </div>
+                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="first" onclick="showThis(this)"> <label for="first" class="pl-1 pt-sm-0 pt-1">{{'6 first added'|trans }}</label> </div>
+                    <div class="form-inline border rounded p-sm-2 my-2"> <input type="radio" name="type" id="all" onclick="showThis(this)"> <label for="all" class="pl-1 pt-sm-0 pt-1">{{'All items'|trans }}</label> </div>
                 </form>
               </div>
             </p>
           </div>
 
           <div class="p-4">
-            <h4 class="fst-italic">Tags</h4>
+            <h4 class="fst-italic">{{'Tags'|trans }}</h4>
             <ol class="list-unstyled mb-0">
               {% for tag in tags %}
                 <h5><a href="#">#{{ tag.name }} </a></h5>

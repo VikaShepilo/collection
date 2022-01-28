@@ -14,9 +14,7 @@ class CreateItemController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/createItem', name: 'create_item')]
     public function index(Request $request)
     {   
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $idCollection = $urlArray[1];
+        $idCollection = $request->query->get('id');
 
         $item = new Item();
 

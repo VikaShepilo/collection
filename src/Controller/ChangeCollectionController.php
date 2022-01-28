@@ -13,9 +13,7 @@ class ChangeCollectionController extends AbstractController
     #[Route('/{_locale<%app.supported_locales%>}/change/collection', name: 'change_collection')]
     public function index(Request $request)
     {
-        $url = $_SERVER['REQUEST_URI'];
-        $urlArray = explode("=", $url);
-        $id = $urlArray[1];
+        $idCollection = $request->query->get('id');
 
         $em = $this->getDoctrine()->getManager();
         $collection = $em->getRepository(Collections::class)->find($id);

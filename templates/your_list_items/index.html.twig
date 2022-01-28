@@ -3,10 +3,11 @@
 {% block title %}{% endblock %}
 
 {% block body %}
-<a href="{{ path('create_item', {'id':id}) }}" class="btn btn-info">{{ 'Create new item'|trans }}</a>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <a href="{{ path('create_item', {'id':id}) }}" class="btn btn-info">{{ 'Create new item'|trans }}</a>
       <div class="card bg-light mb-3 mt-3">
         <div class="card-body">
           <div class="card-header">{{ 'Your items'|trans }}</div>

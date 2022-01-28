@@ -5,6 +5,142 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
+      <trans-unit id="n5.q3nY" resname="Collections">
+        <source>Collections</source>
+        <target>Коллекции</target>
+      </trans-unit>
+      <trans-unit id="3iE04Og" resname="Back to the website">
+        <source>Back to the website</source>
+        <target>Вернуться на веб-сайт</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Пользователи</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Пользователь</target>
+      </trans-unit>
+      <trans-unit id="pCTjPZC" resname="Locked">
+        <source>Locked</source>
+        <target>Блокировка</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Роли</target>
+      </trans-unit>
+      <trans-unit id="DiImtSN" resname="Welcome">
+        <source>Welcome</source>
+        <target>Добро пожаловать</target>
+      </trans-unit>
+      <trans-unit id="dRGIg2X" resname="Name Item">
+        <source>Name Item</source>
+        <target>Имя айтема</target>
+      </trans-unit>
+      <trans-unit id="_456Gjy" resname="Items">
+        <source>Items</source>
+        <target>Айтемы</target>
+      </trans-unit>
+      <trans-unit id="wpIhDEQ" resname="Confirm Password">
+        <source>Confirm Password</source>
+        <target>Повторите пароль</target>
+      </trans-unit>
+      <trans-unit id="242CRiX" resname="Collections Application">
+        <source>Collections Application</source>
+        <target>Приложение коллекций</target>
+      </trans-unit>
+      <trans-unit id="Oyvigif" resname="This application has the ability to create collections with items that can have tags and other information.">
+        <source>This application has the ability to create collections with items that can have tags and other information.</source>
+        <target>Данное приложение имеет возможности создания коллекций с айтемами, которые могут обладать тегами и другой информацией.</target>
+      </trans-unit>
+      <trans-unit id="HLC6El_" resname="Information">
+        <source>Information</source>
+        <target>Информация</target>
+      </trans-unit>
+      <trans-unit id="C7hAuQ7" resname="Available tags">
+        <source>Available tags</source>
+        <target>Имеющиеся теги</target>
+      </trans-unit>
+      <trans-unit id="VG67jrm" resname="Filters">
+        <source>Filters</source>
+        <target>Фильтрация</target>
+      </trans-unit>
+      <trans-unit id="MuRcMHQ" resname="6 last added">
+        <source>6 last added</source>
+        <target>6 последних добавленных</target>
+      </trans-unit>
+      <trans-unit id="tQ1i72Q" resname="6 first added">
+        <source>6 first added</source>
+        <target>6 первых добавленных</target>
+      </trans-unit>
+      <trans-unit id="URB2hnV" resname="All items">
+        <source>All items</source>
+        <target>Все айтемы</target>
+      </trans-unit>
+      <trans-unit id="bNCnnyX" resname="Best comment">
+        <source>Best comment</source>
+        <target>Лучший комментарий</target>
+      </trans-unit>
+      <trans-unit id="r.B2alK" resname="Review">
+        <source>Review</source>
+        <target>Ревью</target>
+      </trans-unit>
+      <trans-unit id="7Gr.wuz" resname="Criticism">
+        <source>Criticism</source>
+        <target>Критика</target>
+      </trans-unit>
+      <trans-unit id="Z.1qw8p" resname="Date publication">
+        <source>Date publication</source>
+        <target>Дата публикации</target>
+      </trans-unit>
+      <trans-unit id="Eg5L2wD" resname="Date authors of birth">
+        <source>Date authors of birth</source>
+        <target>Дата рождения авторов</target>
+      </trans-unit>
+      <trans-unit id="Qs8q1Rd" resname="Development start date">
+        <source>Development start date</source>
+        <target>Дата начала разработки</target>
+      </trans-unit>
+      <trans-unit id="5q0W6PC" resname="Integrity of history">
+        <source>Integrity of history</source>
+        <target>Интегрированная история</target>
+      </trans-unit>
+      <trans-unit id="ZDzMfIj" resname="One author">
+        <source>One author</source>
+        <target>Один автор</target>
+      </trans-unit>
+      <trans-unit id="qZEWdY2" resname="Abult content">
+        <source>Abult content</source>
+        <target>Контент для взрослых</target>
+      </trans-unit>
+      <trans-unit id="bYBIbMM" resname="Fees">
+        <source>Fees</source>
+        <target>Денежные сборы</target>
+      </trans-unit>
+      <trans-unit id="RX8yiDZ" resname="Place in the top">
+        <source>Place in the top</source>
+        <target>Место в топе</target>
+      </trans-unit>
+      <trans-unit id="yPRlomE" resname="Number of awards">
+        <source>Number of awards</source>
+        <target>Номер топа</target>
+      </trans-unit>
+      <trans-unit id="2VCCou5" resname="Author">
+        <source>Author</source>
+        <target>Автор</target>
+      </trans-unit>
+      <trans-unit id="baeVqGZ" resname="Genre">
+        <source>Genre</source>
+        <target>Жанр</target>
+      </trans-unit>
+      <trans-unit id="cB0CHQj" resname="Country">
+        <source>Country</source>
+        <target>Страна</target>
+      </trans-unit>
+      <trans-unit id="EwT0gNx" resname="Return to the homepage">
+        <source>Return to the homepage</source>
+        <target>Вернуться на главную страницу</target>
+      </trans-unit>
       <trans-unit id="Y4ND.sf" resname="Admin panel">
         <source>Admin panel</source>
         <target>Панель администратора</target>
@@ -12,10 +148,6 @@
       <trans-unit id="7WFKupn" resname="Your collections">
         <source>Your collections</source>
         <target>Ваши коллекции</target>
-      </trans-unit>
-      <trans-unit id="URB2hnV" resname="All items">
-        <source>All items</source>
-        <target>Все айтемы</target>
       </trans-unit>
       <trans-unit id="0FJ_Sz1" resname="Logout">
         <source>Logout</source>
@@ -173,41 +305,9 @@
         <source>Image</source>
         <target>Изображение</target>
       </trans-unit>
-      <trans-unit id="2VCCou5" resname="Author">
-        <source>Author</source>
-        <target>Автор</target>
-      </trans-unit>
-      <trans-unit id="cB0CHQj" resname="Country">
-        <source>Country</source>
-        <target>Страна</target>
-      </trans-unit>
-      <trans-unit id="baeVqGZ" resname="Genre">
-        <source>Genre</source>
-        <target>Жанр</target>
-      </trans-unit>
-      <trans-unit id="bYBIbMM" resname="Fees">
-        <source>Fees</source>
-        <target>Денежные сборы</target>
-      </trans-unit>
-      <trans-unit id="RX8yiDZ" resname="Place in the top">
-        <source>Place in the top</source>
-        <target>Место в топе</target>
-      </trans-unit>
-      <trans-unit id="yPRlomE" resname="Number of awards">
-        <source>Number of awards</source>
-        <target>Номер топа</target>
-      </trans-unit>
       <trans-unit id="v2s58Nk" resname="Comment top">
         <source>Comment top</source>
         <target>Лучший комментарий</target>
-      </trans-unit>
-      <trans-unit id="r.B2alK" resname="Review">
-        <source>Review</source>
-        <target>Ревью</target>
-      </trans-unit>
-      <trans-unit id="7Gr.wuz" resname="Criticism">
-        <source>Criticism</source>
-        <target>Критика</target>
       </trans-unit>
       <trans-unit id="KUc83Og" resname="Publication date">
         <source>Publication date</source>
@@ -220,18 +320,6 @@
       <trans-unit id="XJDZ60d" resname="Date development">
         <source>Date development</source>
         <target>Дата создания</target>
-      </trans-unit>
-      <trans-unit id="5q0W6PC" resname="Integrity of history">
-        <source>Integrity of history</source>
-        <target>Интегрированная история</target>
-      </trans-unit>
-      <trans-unit id="ZDzMfIj" resname="One author">
-        <source>One author</source>
-        <target>Один автор</target>
-      </trans-unit>
-      <trans-unit id="qZEWdY2" resname="Abult content">
-        <source>Abult content</source>
-        <target>Контент для взрослых</target>
       </trans-unit>
       <trans-unit id="3NHVIj9" resname="Name">
         <source>Name</source>

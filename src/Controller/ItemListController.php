@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Comment;
+use App\Entity\Information;
 use App\Entity\Item;
 use App\Form\CommentFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,7 +26,10 @@ class ItemListController extends AbstractController
 
         $comment = new Comment();
 
-        $id = $this->getDoctrine()->getManager()->getRepository(Item::class)->find($idItem);
+        $item = $this->getDoctrine()->getManager()->getRepository(Item::class)->find($idItem);
+        $idCollection = $item->getCollections()->getId();
+        $information = $this->getDoctrine()->getManager()->getRepository(Information::class)->findBy(['one_collection' => $idCollection]);
+
         $form = $this->createForm(CommentFormType::class, $comment);
         $form->handleRequest($request);
 
@@ -33,7 +37,7 @@ class ItemListController extends AbstractController
 
             $comment->setAuthor($user->getName());
             $comment->setCreatedAt(new \DateTime());
-            $comment->setItem($id);
+            $comment->setItem($item);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
@@ -45,7 +49,8 @@ class ItemListController extends AbstractController
         return $this->render('item_list/index.html.twig', [
             'form' => $form->createView(),
             'comments' => $comments,
-            
+            'item' => $item,
+            'information' => $information
         ]);
     }
 }

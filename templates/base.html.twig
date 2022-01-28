@@ -10,20 +10,28 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
     
-    {% block stylesheets %}{% endblock %}
+    
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('build/css/list.css') }}"/>
+    {% endblock %}
   </head>
   <body>
+
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light"
       style="height: 70px;"
     >
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
-      <ul class="nav navbar-nav navbar-right">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      </div>
+      <ul class="nav navbar-nav navbar-right ">
+        {% if app.user %}
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
         {% if is_granted('ROLE_ADMIN') %}
         <li><a class="nav-link" href="{{ path('list_user') }}">{{ 'Admin panel'|trans }}</a></li>
         {% endif %}
-        {% if app.user %}
         <li><a class="nav-link" href="{{ path('your_list') }}">{{ 'Your collections'|trans }}</a></li>
         <li><a class="nav-link" href="{{ path('list') }}">{{ 'All items'|trans }}</a></li>
         <li><a class="nav-link" href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a></li>
@@ -51,9 +59,6 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"
         ></script>
-    <script>
-      $('.dropdown-toggle').dropdown()
-    </script>
     {% endblock %}
   </body>
 </html>

@@ -24,31 +24,22 @@ class CollectionCreateController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $collection->setIdAuthor($id);
+            $imgFile = $form->get('img')->getData();
 
-           
+            if ($imgFile) {
+                $originalFilename = pathinfo($imgFile->getClientOriginalName(), PATHINFO_FILENAME);
 
-            $brochureFile = $form->get('img')->getData();
-
-            // это условие необходимо, потому что поле 'brochure' не обязательно,
-            // поэтому PDF-файл должен быть обработан только после загрузки файла
-            if ($brochureFile) {
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // это необходимо для безопасного включения имени файла в качестве части URL
                 $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imgFile->guessExtension();
 
-                // Переместите файлв каталог, где хранятся брошюры
                 try {
-                    $brochureFile->move(
+                    $imgFile->move(
                         $this->getParameter('photos_directory'),
-                        $newFilename
-                    );
+                        $newFilename);
                 } catch (FileException $e) {
-                    // ... разберитесь с исключением, если что-то случится во время загрузки файла
+
                 }
 
-                // обновляет свойство 'brochureFilename' для сохранения имени PDF-файла,
-                // а не его содержания
                 $collection->setImg($newFilename);
             }
             $em = $this->getDoctrine()->getManager();

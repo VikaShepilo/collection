@@ -16,13 +16,16 @@ class ListController extends AbstractController
     {   
         $user = $this->getUser();
         $em = $this->getDoctrine()->getManager();
-        $items = $em->getRepository(Item::class)->findBy([], ['id' => 'DESC'], 6);
-
+        $itemsLast = $em->getRepository(Item::class)->findBy([], ['id' => 'DESC'], 6);
+        $itemsFirst = $em->getRepository(Item::class)->findBy([], ['id' => 'ASC'], 6);
+        $items = $em->getRepository(Item::class)->findBy([], []);
         $tags = $em->getRepository(Tag::class)->findAll();
 
         $collections = $em->getRepository(Item::class)->findBy([], []);
 
         return $this->render('list/index.html.twig', [
+            'last_items' => $itemsLast,
+            'first_items' => $itemsFirst,
             'items' => $items,
             'tags' => $tags,
             'collections' => $collections,

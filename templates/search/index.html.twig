@@ -33,7 +33,6 @@
           {% endfor %}
           {% for tag in tags %}
             {% for n in tag.items %}
-              {% if n.nameItem in not tag.items %}
                 <div class="col-sm-12">
                   <div class="card">
                     <div class="card-body">
@@ -50,7 +49,6 @@
                     </div>
                   </div>
                 </div>
-              {% endif %}
             {% endfor %}
           {% endfor %}
         </div> 

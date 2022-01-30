@@ -13,27 +13,8 @@
     <div class="row g-5">
       <div class="col-md-8">
         <div class="row" id="items">
-          {% for item in items %}
-            <div class="col-sm-12">
-              <div class="card">
-                <div class="card-body">
-                  <strong class="d-inline-block mb-2 text-primary">{{ 'Item'|trans }}</strong>
-                  <h3 class="mb-0">
-                    <a class="text-dark" href="{{ path('item_list', {'id':item.id}) }}">{{ item.nameItem }}</a>
-                  </h3>
-                  <div class="mb-1 text-muted">
-                    {% for tag in item.tags %}
-                      #{{ tag.name }} 
-                    {% endfor %} 
-                  </div>
-                  <p class="card-text mb-auto">{{ 'Collection:'|trans }} {{ item.collections }} </p>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
           {% for tag in tags %}
             {% for n in tag.items %}
-              {% if n.nameItem in not tag.items %}
                 <div class="col-sm-12">
                   <div class="card">
                     <div class="card-body">
@@ -49,10 +30,9 @@
                       <p class="card-text mb-auto">{{ 'Collection:'|trans }} {{ n.collections }} </p>
                     </div>
                   </div>
-                </div>
-              {% endif %}
-            {% endfor %}
-          {% endfor %}
+                </div> 
+            {% endfor %} 
+          {% endfor %} 
         </div> 
       </div>
     </div>

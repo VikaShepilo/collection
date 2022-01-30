@@ -38,9 +38,24 @@ class ListController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $query = $request->query->get('q');
         $items = $em->getRepository(Item::class)->searchByQuery($query);
+        $tags = $em->getRepository(Tag::class)->searchByQuery($query);
 
         return $this->render('search/index.html.twig', [
-            'items' => $items
+            'items' => $items,
+            'tags' => $tags
+        ]);
+    }
+
+    #[Route('/{_locale<%app.supported_locales%>}/searchTag', name: 'tag_search')]
+    public function searchTag(Request $request)
+    {
+        $nameTag = $request->query->get('name');
+
+        $em = $this->getDoctrine()->getManager();
+        $tags = $em->getRepository(Tag::class)->searchByQuery($nameTag);
+
+        return $this->render('tag_list/index.html.twig', [
+            'tags' => $tags
         ]);
     }
 }

@@ -24,7 +24,7 @@ class DashboardController extends AbstractDashboardController
 
     public function index(): Response
     {
-        return parent::index();
+        return $this->redirectToRoute('list_user', ['_locale' => 'en']);
     }
 
     public function configureDashboard(): Dashboard

@@ -18,6 +18,9 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
+    /**
+     *  @Assert\Email(message="Please enter a valid email address.")
+     */
     private $email;
 
     /**
@@ -33,6 +36,9 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     */
+    /**
+     *  @Assert\Length(min="3", minMessage="It is limited to {{ limit }} characters.", max="32", maxMessage="It is limited to {{ limit }} characters.")
      */
     private $name;
 

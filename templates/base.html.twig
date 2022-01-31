@@ -24,10 +24,10 @@
 
       </div>
       <ul class="nav navbar-nav navbar-right ">
-        {% if app.user %}
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="{{ path('blog_search') }}" method="get">
-            <input type="search" class="form-control" placeholder="{{ 'Search'|trans }}..." aria-label="Search" name="q">
+          <input type="search" class="form-control" placeholder="{{ 'Search'|trans }}..." aria-label="Search" name="q">
         </form>
+        {% if app.user %}
         {% if is_granted('ROLE_ADMIN') %}
         <li><a class="nav-link" href="{{ path('list_user') }}">{{ 'Admin panel'|trans }}</a></li>
         {% endif %}

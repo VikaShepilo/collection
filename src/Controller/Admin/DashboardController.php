@@ -20,12 +20,11 @@ class DashboardController extends AbstractDashboardController
         return $this->redirectToRoute('list_user', ['_locale' => 'en']);
     }
 
-    #[Route('/admin_panel', name: 'list_user')]
+    #[Route('/{_locale<%app.supported_locales%>}/admin_panel', name: 'list_user')]
 
     public function index(): Response
     {
-        $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
-        return $this->redirect($routeBuilder->setController(UserCrudController::class)->generateUrl());
+        return parent::index();
     }
 
     public function configureDashboard(): Dashboard
